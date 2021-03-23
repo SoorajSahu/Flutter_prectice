@@ -1,8 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// import 'package:medxcart_app/theme.dart';
+import 'package:medxcart_app/theme.dart';
 import 'package:medxcart_app/widgets/customButton.dart';
 import 'package:flutter_session/flutter_session.dart';
+
+class NewClass extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Text('Hello bro'),
+      color: Colors.lightBlueAccent,
+    );
+  }
+}
 
 class OtpVarify extends StatefulWidget {
   @override
@@ -18,11 +28,16 @@ class _OtpVarifyState extends State<OtpVarify> {
     });
   }
 
-  // dynamic phoneNum =  FlutterSession().get('phoneNumber');
+  dynamic phoneNum = FlutterSession().get('phoneNumber');
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: MyColors.primaryColor,
+        title: Text('Verify OTP'),
+        centerTitle: true,
+      ),
       body: Container(
         alignment: Alignment.center,
         padding: EdgeInsets.all(15),
@@ -51,7 +66,7 @@ class _OtpVarifyState extends State<OtpVarify> {
                 constraints: const BoxConstraints(maxWidth: 500),
                 child: TextFormField(
                   keyboardType: TextInputType.number,
-                  maxLength: 4,
+                  maxLength: 6,
                 )),
             SizedBox(
               height: 60,
