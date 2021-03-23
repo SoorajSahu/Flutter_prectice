@@ -18,8 +18,6 @@ class _OtpVarifyState extends State<OtpVarify> {
     });
   }
 
- 
-
   // dynamic phoneNum =  FlutterSession().get('phoneNumber');
 
   @override
@@ -50,11 +48,11 @@ class _OtpVarifyState extends State<OtpVarify> {
               height: 35,
             ),
             Container(
-              constraints: const BoxConstraints(maxWidth: 500),
-              child:TextFormField(
-                keyboardType: TextInputType.number,
-              )
-            ),
+                constraints: const BoxConstraints(maxWidth: 500),
+                child: TextFormField(
+                  keyboardType: TextInputType.number,
+                  maxLength: 4,
+                )),
             SizedBox(
               height: 60,
             ),
